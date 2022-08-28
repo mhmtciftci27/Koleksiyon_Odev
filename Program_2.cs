@@ -10,7 +10,7 @@ internal class Program2
         ArrayList b_liste = new ArrayList();
         Console.WriteLine("20 Adet Sayı Giriniz:");
         int sayac = 1;
-        while (sayac<=20)
+        while (sayac<=10)
         {
             liste.Add(Convert.ToInt32(Console.ReadLine()));
             sayac+=1;
@@ -33,21 +33,20 @@ internal class Program2
             b_liste.Add(Convert.ToInt32(liste[i]));
             enbuyuk += Convert.ToInt32(liste[i]);
         }
-        
+        Console.WriteLine("En kücük "+sayi+ " sayi");
         foreach (var item in k_liste)
         {
-            Console.WriteLine("En kücük "+sayi+ " sayi");
             Console.WriteLine(item);            
         }
         Console.WriteLine("En küçük sayıların Toplamı:"+ enkucuk);
-        Console.WriteLine("Asal Sayıların Ortalaması:"+ enkucuk/sayi);
+        Console.WriteLine("En küçük Sayıların Ortalaması:"+ enkucuk/sayi);
         
+        Console.WriteLine("En Büyük "+sayi+ " sayi");
         foreach (var item in b_liste)
         {
-            Console.WriteLine("En Büyük "+sayi+ " sayi");
             Console.WriteLine(item);            
         }
-        Console.WriteLine("Asal Olmayan Sayıların Toplamı:"+ enbuyuk);
-        Console.WriteLine("Asal Olmayan Sayıların Ortalaması:"+ enbuyuk/sayi); 
+        Console.WriteLine("En büyük Sayıların Toplamı:"+ enbuyuk);
+        Console.WriteLine("En büyük Sayıların Ortalaması:"+ enbuyuk/sayi); 
     }
 }
