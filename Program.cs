@@ -3,13 +3,13 @@ using System;
 
 internal class Program
 {
-    static void Main(string[] args)
+    static void Main2(string[] args)
     {
         ArrayList asal = new ArrayList();
         ArrayList nasal = new ArrayList();
         Console.WriteLine("20 Tane Pozitif Sayı Giriniz:");
         int sayac = 1;
-        while (sayac<=5)
+        while (sayac<=20)
         {
             int sayi = Convert.ToInt32(Console.ReadLine());
             if(sayi<=0)

@@ -5,65 +5,49 @@ internal class Program2
 {
     static void Main(string[] args)
     {
-        ArrayList asal = new ArrayList();
-        ArrayList nasal = new ArrayList();
-        Console.WriteLine("20 Tane Pozitif Sayı Giriniz:");
+        ArrayList liste = new ArrayList();
+        ArrayList k_liste = new ArrayList();
+        ArrayList b_liste = new ArrayList();
+        Console.WriteLine("20 Adet Sayı Giriniz:");
         int sayac = 1;
-        while (sayac<=5)
+        while (sayac<=20)
         {
-            int sayi = Convert.ToInt32(Console.ReadLine());
-            if(sayi<=0)
-                Console.WriteLine("Pozitif bir sayı giriniz");
-            else if(sayi==2) 
-            {
-                asal.Add(sayi);
-                sayac+=1;
-            }
-            else
-            {
-                int sonuc = Asalmi(sayi);
-                if(sonuc==0)
-                    nasal.Add(sayi);
-                else
-                    asal.Add(sayi);
-                sayac+=1;
-            }
+            liste.Add(Convert.ToInt32(Console.ReadLine()));
+            sayac+=1;
         }
-        asal.Sort();
-        nasal.Sort();
-        int toplam = 0;
-        int toplam2= 0;
+        Console.WriteLine("En Büyük/küçük bulunacak sayıyı giriniz: ");
+        int sayi = Convert.ToInt32(Console.ReadLine());
+        liste.Sort();
+        
+        int enbuyuk = 0;
+        int enkucuk = 0;
 
-        foreach (var item in asal)
+        for (int i = 0; i < sayi; i++)
         {
-            toplam +=Convert.ToInt32(item);
-            Console.WriteLine(item);
+            k_liste.Add(Convert.ToInt32(liste[i]));
+            enkucuk += Convert.ToInt32(liste[i]);
         }
-        foreach (var item in nasal)
+        liste.Reverse();
+        for (int i = 0; i < sayi; i++)
         {
-            toplam2 += Convert.ToInt32(item);
-            Console.WriteLine(item);
+            b_liste.Add(Convert.ToInt32(liste[i]));
+            enbuyuk += Convert.ToInt32(liste[i]);
         }
         
-        Console.WriteLine("Asal Sayıların Toplamı:"+ toplam);
-        Console.WriteLine("Asal Sayıların Ortalaması:"+ toplam/asal.Count); 
-        Console.WriteLine("Asal Olmayan Sayıların Toplamı:"+ toplam2);
-        Console.WriteLine("Asal Olmayan Sayıların Ortalaması:"+ toplam2/nasal.Count); 
-    }
-    private static int Asalmi(int sayi)
-    {
-        int i;
-        for (i = 2; i <= sayi - 1; i++)
+        foreach (var item in k_liste)
         {
-            if (sayi % i == 0)
-            {
-                return 0; //nasal
-            }
+            Console.WriteLine("En kücük "+sayi+ " sayi");
+            Console.WriteLine(item);            
         }
-        if (i == sayi)
+        Console.WriteLine("En küçük sayıların Toplamı:"+ enkucuk);
+        Console.WriteLine("Asal Sayıların Ortalaması:"+ enkucuk/sayi);
+        
+        foreach (var item in b_liste)
         {
-            return 1;
+            Console.WriteLine("En Büyük "+sayi+ " sayi");
+            Console.WriteLine(item);            
         }
-        return 0;
+        Console.WriteLine("Asal Olmayan Sayıların Toplamı:"+ enbuyuk);
+        Console.WriteLine("Asal Olmayan Sayıların Ortalaması:"+ enbuyuk/sayi); 
     }
 }
