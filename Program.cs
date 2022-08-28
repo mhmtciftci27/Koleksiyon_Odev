@@ -37,12 +37,12 @@ internal class Program
         foreach (var item in asal)
         {
             toplam +=Convert.ToInt32(item);
-            Console.Write(item);
+            Console.WriteLine(item);
         }
         foreach (var item in nasal)
         {
             toplam2 += Convert.ToInt32(item);
-            Console.Write(item);
+            Console.WriteLine(item);
         }
         
         Console.WriteLine("Asal Sayıların Toplamı:"+ toplam);
