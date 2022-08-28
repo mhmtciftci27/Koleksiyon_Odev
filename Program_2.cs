@@ -3,7 +3,7 @@ using System;
 
 internal class Program2
 {
-    static void Main(string[] args)
+    static void Main3(string[] args)
     {
         ArrayList liste = new ArrayList();
         ArrayList k_liste = new ArrayList();
